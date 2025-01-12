@@ -1,0 +1,253 @@
+/* Set up the background with an overlay */
+body {
+  font-family: 'Arial', sans-serif;
+  background: url('http://getwallpapers.com/wallpaper/full/f/f/b/981518-free-download-apple-logo-hd-wallpaper-1920x1440.jpg') no-repeat center center fixed;
+  /* Your shared image URL */
+  background-size: cover;
+  background-attachment: fixed;
+  position: relative;
+  color: #333;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+}
+
+/* Apply a semi-transparent overlay to make text and table clearer */
+body::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.6);
+  /* Darker overlay */
+  z-index: -1;
+  /* Ensures overlay is behind the content */
+}
+
+/* Container to hold the header and table */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.7);
+  /* Light white background to improve readability */
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  border: 2px solid #00b3b3;
+  /* Aqua border around the container */
+}
+
+/* Title and introductory text styling */
+h1 {
+  color: #00b3b3;
+  /* Aqua color */
+  font-size: 40px;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+  padding: 10px 0;
+}
+
+p {
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+  padding: 10px 20px;
+  background-color: rgba(0, 0, 0, 0.5);
+  /* Dark background for intro text */
+  border-radius: 10px;
+}
+
+/* Table container with a "water-like" background */
+.table-container {
+  background-color: rgba(0, 255, 255, 0.5);
+  /* Aqua color with transparency */
+  backdrop-filter: blur(10px);
+  /* Blur effect to give a "water" look */
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* Soft shadow for the table container */
+  max-width: 90%;
+  overflow-x: auto;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  /* Slight white border */
+  width: 100%;
+  margin-top: 20px;
+}
+
+/* Table Styling */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0 auto;
+}
+
+/* Table Header Styling */
+th {
+  background-color: #00b3b3;
+  /* Lighter aqua color for the header */
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+/* Table Row Styling */
+td {
+  padding: 12px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  background-color: rgba(255, 255, 255, 0.3);
+  /* Light background for table rows */
+}
+
+/* Hover Effect for Rows */
+tr:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+  /* Slight darkening on hover */
+}
+
+tr:nth-child(even) {
+  background-color: rgba(255, 255, 255, 0.2);
+  /* Light water-like background */
+}
+
+tr:nth-child(odd) {
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Slightly more transparent */
+}
+
+/* Styling for the filtering inputs and labels */
+.filters {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-bottom: 20px;
+  width: 100%;
+}
+
+.filters label {
+  color: #fff;
+  /* White text for labels */
+  font-size: 18px;
+  font-weight: bold;
+  margin-right: 10px;
+  text-transform: uppercase;
+}
+
+.filters select,
+.filters input {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #00b3b3;
+  background-color: rgba(255, 255, 255, 0.8);
+  color: #333;
+  width: 200px;
+  margin: 5px;
+}
+
+.filters input[type="date"] {
+  width: auto;
+
+}
+
+.filters button {
+  background-color: #00b3b3;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.filters button:hover {
+  background-color: #009999;
+}
+
+/* Responsiveness */
+@media (max-width: 1024px) {
+  .container {
+    width: 90%;
+    padding: 20px;
+  }
+
+  h1 {
+    font-size: 36px;
+  }
+
+  p {
+    font-size: 18px;
+  }
+
+  table {
+    font-size: 14px;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%;
+    padding: 15px;
+  }
+
+  h1 {
+    font-size: 30px;
+  }
+
+  p {
+    font-size: 16px;
+  }
+
+  table {
+    font-size: 12px;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 10px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  p {
+    font-size: 14px;
+  }
+
+  table {
+    font-size: 10px;
+  }
+
+  .filters {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
